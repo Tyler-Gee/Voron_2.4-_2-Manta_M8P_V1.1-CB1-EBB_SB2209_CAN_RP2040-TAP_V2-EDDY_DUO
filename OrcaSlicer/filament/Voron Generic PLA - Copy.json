@@ -1,0 +1,22 @@
+{
+    "during_print_exhaust_fan_speed": [
+        "0"
+    ],
+    "fan_min_speed": [
+        "70"
+    ],
+    "filament_settings_id": [
+        "Voron Generic PLA - Copy"
+    ],
+    "from": "User",
+    "inherits": "Voron Generic PLA",
+    "is_custom_defined": "0",
+    "name": "Voron Generic PLA - Copy",
+    "nozzle_temperature": [
+        "215"
+    ],
+    "nozzle_temperature_range_low": [
+        "205"
+    ],
+    "version": "2.0.2.0"
+}

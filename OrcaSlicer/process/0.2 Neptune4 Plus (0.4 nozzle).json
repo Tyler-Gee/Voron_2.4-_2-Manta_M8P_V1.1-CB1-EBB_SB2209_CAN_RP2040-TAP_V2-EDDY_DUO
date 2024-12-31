@@ -1,0 +1,16 @@
+{
+    "brim_type": "no_brim",
+    "brim_width": "20",
+    "from": "User",
+    "inherits": "0.20mm Standard @Elegoo Neptune4 Plus (0.4 nozzle)",
+    "is_custom_defined": "0",
+    "name": "0.2 Neptune4 Plus (0.4 nozzle)",
+    "print_settings_id": "0.2 Neptune4 Plus (0.4 nozzle)",
+    "skirt_loops": "2",
+    "sparse_infill_density": "25%",
+    "sparse_infill_pattern": "cubic",
+    "support_type": "tree(auto)",
+    "thick_internal_bridges": "0",
+    "version": "2.0.0.0",
+    "wall_loops": "5"
+}

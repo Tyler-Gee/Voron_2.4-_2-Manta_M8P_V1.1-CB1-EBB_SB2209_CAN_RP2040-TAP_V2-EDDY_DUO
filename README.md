@@ -1,9 +1,9 @@
 ---
 created: 2024-12-19T14:11
-updated: 2024-12-21T18:40
+updated: 2024-12-22T21:22
 ---
 # TODO
-1. Create pdf files for ever step. These files will follow relative path so they can be opened from within the REAMME.md file
+1. Create pdf Manual Chapters files for ever step. These files will follow relative path so they can be opened from within the REAMME.md file
 
 # Formbot Voron 2.4 V2.4 R2 Pro+ Kit
 - Store Link: https://www.aliexpress.com/item/1005003385349518.html?spm=a2g0o.order_list.order_list_main.59.318318027IHoca
@@ -127,6 +127,14 @@ Manual: VORON2 2.4R2 Build Guide
 - Pages: 0 - 11
 Manual: Wiring Instructions for Voron 2.4 Pro
 - Pages: 0 - 11
+Manual: Instruction of V2.4 R2 Pro+
+Manual: BIGTREETECH MANTA M8P V1.0&V1.1 User Manual
+- Page: 11
+Manual: EBB SB2209 CAN V1.0（RP2040）Build Guide_20240219
+- Page: 7
+
+![](Resources/Manuals/Wireing/Wiring%20Overview%20of%20V2.4%20R2%20Pro+.jpg)
+![](Resources/Manuals/Wireing/Instruction%20of%20V2.4%20R2%20Pro+.pdf)
 
 ## Part 12.0: Manta M8P V1.1 + CB1
 Manual: BIGTREETECH MANTA M8P V1.0&V1.1 User Manual
@@ -134,17 +142,16 @@ Manual: BIGTREETECH MANTA M8P V1.0&V1.1 User Manual
 
 ## Part 13.0: Skirts
 Manual: VORON2 2.4R2 Build Guide
-- Pages: 0 - 11
+- Pages: 212 - 239
 
 ## Part 14.0: Panels
 Manual: VORON2 2.4R2 Build Guide
-- Pages: 0 - 11
+- Pages: 240 - 259
 
 ## Part 16: Eddy Duo
-
+Manual: BIGTRRETECH Eddy Series User Manual 20241210
 
 # Flashing
-
 ## Overview
 1. Put device into DFU Mode
 2. Flash Katapult onto device
@@ -164,7 +171,7 @@ Manual: BIGTREETECH CB1 User Manual
 - Pages: 13 - 18
 Image: https://github.com/bigtreetech/CB1/releases
 
-## Configure MANTA M8P
+## MANTA M8P
 Manual: BIGTREETECH MANTA M8P V1.0&V1.1 User Manual
 - Pages: 33 - 39
 Guides: 
@@ -181,18 +188,19 @@ Github: https://github.com/bigtreetech/Manta-M8P
 ```bash
 cd ~/katapult
 make menuconfig
-## Use the following config
-# Micro-controller Architecture (STMicroelectronics STM32)  --->
-# Processor model (STM32G0B1)  --->
-# Build CanBoot deployment application (Do not build)  --->
-# Clock Reference (8 MHz crystal)  --->
-# Communication interface (CAN bus (on PD12/PD13))  --->
-# Application start offset (8KiB offset)  --->
-# (250000) CAN bus speed
-# () GPIO pins to set on bootloader entry
-# [*] Support bootloader entry on rapid double click of reset button
-# [ ] Enable bootloader entry on button (or gpio) state
-# [ ] Enable Status LED
+#	Micro-controller Architecture (STMicroelectronics STM32)  --->
+#    Processor model (STM32G0B1)  --->
+#    Build Katapult deployment application (8KiB bootloader)  --->
+#    Clock Reference (8 MHz crystal)  --->
+#    Communication interface (USB (on PA11/PA12))  --->
+#    Application start offset (8KiB offset)  --->
+#    USB ids  --->
+#()  GPIO pins to set on bootloader entry
+#[*] Support bootloader entry on rapid double click of reset button
+#[ ] Enable bootloader entry on button (or gpio) state
+#[*] Enable Status LED
+#(PA13)  Status LED GPIO Pin
+
 make clean
 make
 
@@ -209,20 +217,19 @@ sudo dfu-util -R -a 0 -s 0x08000000:leave -D ~/katapult/out/katapult.bin -d 0483
 ```bash
 cd ~/klipper
 make menuconfig
-## Use the following config
-# [*] Enable extra low-level configuration options
-# Micro-controller Architecture (STMicroelectronics STM32) --->
-# Processor model (STM32G0B1) --->
-# Bootloader offset (8KiB bootloader) --->
-# Clock Reference (8 MHz crystal) --->
-# Communication interface (USB to CAN bus bridge (USB on PA11/PA12)) --->
-# CAN bus interface (CAN bus (on PD12/PD13)) --->
-# USB ids --->
-# (250000) CAN bus speed
-# () GPIO pins to set at micro-controller startup
+#[*] Enable extra low-level configuration options
+#    Micro-controller Architecture (STMicroelectronics STM32)  --->
+#    Processor model (STM32G0B1)  --->
+#    Bootloader offset (8KiB bootloader)  --->
+#    Clock Reference (8 MHz crystal)  --->
+#    Communication interface (USB to CAN bus bridge (USB on PA11/PA12))  --->
+#    CAN bus interface (CAN bus (on PD12/PD13))  --->
+#    USB ids  --->
+#(1000000) CAN bus speed
+#()  GPIO pins to set at micro-controller startup
 make clean
 make
-
+ 
 sudo service klipper stop
 ls /dev/serial/by-id/
 ## usb-katapult_stm32g0b1xx_460041000A504B4633373520-if00
@@ -238,7 +245,7 @@ sudo service klipper start
 
 
 
-## Configure EBB SB2209C CAN RP2040 
+## EBB SB2209C CAN RP2040 
 Manual: EBB SB2209 CAN V1.0（RP2040）Build Guide_20240219
 - Guides:
 	1. @ [MAIN GUIDE]https://canbus.esoterical.online/toolhead_flashing
@@ -321,7 +328,8 @@ sudo service klipper start
 ## Detected UUID: 5a2de1007cc7, Application: Klipper
 ```
 
-## Configure Eddy
+
+## Eddy
 Manual: EBB SB2209 CAN V1.0（RP2040）Build Guide_20240219
 - Guides:
 Github: https://github.com/bigtreetech/Eddy
@@ -396,60 +404,11 @@ sudo service klipper start
 ##Detected UUID: 5a2de1007cc7, Application: Klipper
 ```
 
-## Install KAIUH
+## KAIUH
 Github: https://github.com/dw-0/kiauh
-
-
 ```bash
 cd ~/kiauh
 ./kiauh.sh
 ## Install Fluid and Fluid Client-Config
 ## Update everything
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Step 1: Update Klipper
-1. In fluid Use the Update Feature
-2. Check if update was successful
-
-```bash
-```bash
-
-
-```
-
-
-## Step 2: Flash Eddy
-Manual: BIGTRRETECH Eddy Series User Manual 20241210
-github: https://github.com/dw-0/kiauh
-1. Follow 5.4. Flashing KATAPULT (formerly CanBoot)
-	- Page 24
-2. Follow 5.5.1. Updating Firmware via a Computer
-	- Page 25
-3. Follow 5.1. Compiling Firmware
-	- Pages: 18 - 20
-4. Follow 5.2.1. Update Firmware via Computer
-	- Pages: 20 - 21
-
-## Step 3:
-## Step 4:
-
-## Step 5:
-
-## Step 6:
-
-
-
-# Config

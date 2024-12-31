@@ -1,0 +1,21 @@
+{
+    "auxiliary_fan": "1",
+    "bed_mesh_probe_distance": "10,20",
+    "from": "User",
+    "inherits": "Voron 2.4 300 0.6 nozzle",
+    "is_custom_defined": "0",
+    "machine_start_gcode": "PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]",
+    "name": "Voron 2.4 300 0.6 nozzle - Copy",
+    "nozzle_type": "hardened_steel",
+    "print_host": "192.168.0.156",
+    "printable_area": [
+        "0x0",
+        "300x0",
+        "300x292",
+        "0x292"
+    ],
+    "printable_height": "250",
+    "printer_settings_id": "Voron 2.4 300 0.6 nozzle - Copy",
+    "support_multi_bed_types": "1",
+    "version": "2.0.2.0"
+}

@@ -1,0 +1,18 @@
+{
+    "brim_type": "outer_and_inner",
+    "enable_support": "1",
+    "ensure_vertical_shell_thickness": "none",
+    "from": "User",
+    "inherits": "0.20mm Standard @Voron",
+    "is_custom_defined": "0",
+    "name": "0.20mm Standard @Voron - Copy",
+    "overhang_reverse": "1",
+    "print_settings_id": "0.20mm Standard @Voron - Copy",
+    "skirt_loops": "4",
+    "sparse_infill_pattern": "adaptivecubic",
+    "support_bottom_z_distance": "0.3",
+    "support_top_z_distance": "0.3",
+    "thick_internal_bridges": "0",
+    "version": "2.0.2.0",
+    "wall_sequence": "inner-outer-inner wall"
+}

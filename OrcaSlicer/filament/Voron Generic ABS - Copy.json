@@ -1,0 +1,34 @@
+{
+    "dont_slow_down_outer_wall": [
+        "1"
+    ],
+    "during_print_exhaust_fan_speed": [
+        "0"
+    ],
+    "fan_max_speed": [
+        "15"
+    ],
+    "fan_min_speed": [
+        "0"
+    ],
+    "filament_settings_id": [
+        "Voron Generic ABS - Copy"
+    ],
+    "from": "User",
+    "inherits": "Voron Generic ABS",
+    "is_custom_defined": "0",
+    "name": "Voron Generic ABS - Copy",
+    "nozzle_temperature": [
+        "245"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "250"
+    ],
+    "nozzle_temperature_range_high": [
+        "260"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "0"
+    ],
+    "version": "2.0.2.0"
+}

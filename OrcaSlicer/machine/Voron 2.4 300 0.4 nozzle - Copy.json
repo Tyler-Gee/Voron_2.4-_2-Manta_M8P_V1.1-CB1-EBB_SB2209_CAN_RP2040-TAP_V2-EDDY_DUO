@@ -1,0 +1,13 @@
+{
+    "auxiliary_fan": "1",
+    "from": "User",
+    "inherits": "Voron 2.4 300 0.4 nozzle",
+    "is_custom_defined": "0",
+    "machine_start_gcode": "PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]",
+    "name": "Voron 2.4 300 0.4 nozzle - Copy",
+    "nozzle_type": "brass",
+    "print_host": "10.0.0.33:81",
+    "printable_height": "225",
+    "printer_settings_id": "Voron 2.4 300 0.4 nozzle - Copy",
+    "version": "2.0.2.0"
+}
